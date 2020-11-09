@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import '../widgets/home_page_widgets/home_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -20,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         centerTitle: true,
         title: AutoSizeText(
-          "Covid-19 Tracker",
+          "Covid-19 Informer",
           style: TextStyle(
             fontSize: 20,
             fontFamily: "Montserrat",

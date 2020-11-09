@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // ignore: must_be_immutable
 class VirusDetailsScreen extends StatelessWidget {
@@ -58,6 +59,8 @@ class VirusDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double pageHeight = MediaQuery.of(context).size.height;
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
       backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,

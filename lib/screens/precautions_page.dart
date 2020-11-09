@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/services.dart';
 
 import '../widgets/home_page_widgets/precaution_card_grid.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class PrecautionsScreen extends StatefulWidget {
 class _PrecautionsScreenState extends State<PrecautionsScreen> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
       backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,
@@ -84,9 +87,13 @@ class _PrecautionsScreenState extends State<PrecautionsScreen> {
                         child: LayoutBuilder(
                           builder: (ctx, constraint) => Hero(
                             tag: widget.imgPath,
-                            child: Image(
-                              image: AssetImage(widget.imgPath),
-                              height: constraint.maxHeight * 0.93,
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.only(right: 20.0, top: 50.0),
+                              child: Image(
+                                image: AssetImage(widget.imgPath),
+                                height: constraint.maxHeight * 0.93,
+                              ),
                             ),
                           ),
                         ),

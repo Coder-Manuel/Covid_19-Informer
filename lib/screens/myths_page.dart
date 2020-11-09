@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore: must_be_immutable
@@ -70,6 +71,8 @@ class MythsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
       backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,
@@ -130,7 +133,7 @@ class MythsScreen extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: Container(
-                        padding: const EdgeInsets.only(right: 10.0),
+                        padding: const EdgeInsets.only(right: 10.0, top: 30.0),
                         child: LayoutBuilder(
                           builder: (ctx, constraint) => Hero(
                             tag: imgPath,
@@ -173,10 +176,11 @@ class MythsScreen extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(23, 35, 23, 15),
                               child: LayoutBuilder(
                                 builder: (ctx, constraint) => Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
                                   children: <Widget>[
                                     LimitedBox(
-                                      maxHeight: constraint.maxHeight*0.27,
+                                      maxHeight: constraint.maxHeight * 0.27,
                                       child: Image(
                                         image: AssetImage(
                                             "${myths[index]["imgPath"]}"),
@@ -184,10 +188,10 @@ class MythsScreen extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: constraint.maxHeight*0.11,
+                                      height: constraint.maxHeight * 0.11,
                                     ),
                                     LimitedBox(
-                                      maxHeight: constraint.maxHeight*0.17,
+                                      maxHeight: constraint.maxHeight * 0.17,
                                       child: AutoSizeText(
                                         "${myths[index]["myth"]}",
                                         textAlign: TextAlign.center,
@@ -207,7 +211,7 @@ class MythsScreen extends StatelessWidget {
                                       height: 13,
                                     ),
                                     LimitedBox(
-                                      maxHeight: constraint.maxHeight*0.45,
+                                      maxHeight: constraint.maxHeight * 0.45,
                                       child: AutoSizeText(
                                         "${myths[index]['desc']}",
                                         textAlign: TextAlign.center,

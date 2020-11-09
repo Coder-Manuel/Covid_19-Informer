@@ -83,7 +83,7 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: const EdgeInsets.only(top: 15),
+              padding: const EdgeInsets.only(top: 50),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -263,7 +263,7 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
 
           //White Details Card
           Positioned(
-            top: 150,
+            top: 160,
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height - 150,

@@ -18,24 +18,21 @@ class CountryStatScreen extends StatefulWidget {
   _CountryStatScreenState createState() => _CountryStatScreenState();
 }
 
-class _CountryStatScreenState extends State<CountryStatScreen>{
-
+class _CountryStatScreenState extends State<CountryStatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      body: SafeArea(
-        child: CountryStatWidget(
-          color: widget.color,
-          onBackArrow: (){
-            Navigator.of(context).pop();
-          },
-          countryCode: widget.countryCode,
-          countryName: widget.countryName,
-          totalCases: widget.totalCases,
-          flagPath: widget.flagPath,
-          isIncreasing: widget.isIncreasing,
-        ),
+      body: CountryStatWidget(
+        color: widget.color,
+        onBackArrow: () {
+          Navigator.of(context).pop();
+        },
+        countryCode: widget.countryCode,
+        countryName: widget.countryName,
+        totalCases: widget.totalCases,
+        flagPath: widget.flagPath,
+        isIncreasing: widget.isIncreasing,
       ),
     );
   }

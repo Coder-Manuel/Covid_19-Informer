@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/services.dart';
 import '../util/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -11,6 +12,8 @@ class CreditsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
@@ -53,7 +56,7 @@ class CreditsScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 25),
                   child: AutoSizeText(
-                    "Credits",
+                    "About",
                     style: TextStyle(
                       fontSize: 21,
                       fontFamily: "Montserrat",
@@ -89,8 +92,8 @@ class CreditsScreen extends StatelessWidget {
                     AutoSizeText(
                       "Covid-19 Informer",
                       style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: "Montserrat",
+                        fontSize: 30,
+                        fontFamily: "Nunito",
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),
@@ -150,7 +153,7 @@ class CreditsScreen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: InkWell(
                 onTap: () async {
-                  const url = 'https://github.com/arafaysaleem/covid_tracker';
+                  const url = 'https://github.com/Coder-Manuel';
                   if (await canLaunch(url)) {
                     await launch(
                       url,

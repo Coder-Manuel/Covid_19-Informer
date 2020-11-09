@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/services.dart';
 
 import '../widgets/home_page_widgets/symptom_card_grid.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class SymptomsScreen extends StatefulWidget {
 class _SymptomsScreenState extends State<SymptomsScreen> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
       backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,
@@ -77,7 +80,7 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: Container(
-                        padding: const EdgeInsets.only(right: 20.0),
+                        padding: const EdgeInsets.only(right: 20.0, top: 30.0),
                         child: LayoutBuilder(
                           builder: (ctx, constraint) => Hero(
                             tag: widget.imgPath,
