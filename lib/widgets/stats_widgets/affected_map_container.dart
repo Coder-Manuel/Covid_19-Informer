@@ -39,7 +39,7 @@ class AffectedAreasContainer extends StatelessWidget {
                   IconButton(
                     icon: const Icon(
                       Icons.more_horiz,
-                      color: Color(0xFF7B1FA2),
+                      color: Colors.blueAccent,
                       size: 28,
                     ),
                     onPressed: () {},
@@ -50,6 +50,7 @@ class AffectedAreasContainer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 17, 14),
               child: Image(
+                color: Colors.blueAccent,
                 image: AssetImage("assets/stats/map.png"),
                 fit: BoxFit.contain,
               ),

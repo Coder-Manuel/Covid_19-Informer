@@ -16,7 +16,7 @@ class HomeCategories extends StatelessWidget {
       "imgPath": "assets/stats.png",
       "tabName": "Statistics",
       "tabDesc": "See how it is affecting the world",
-      "color": Colors.deepPurpleAccent,
+      "color": Colors.blueAccent,
     },
     {
       "imgLeft": 15.0,
@@ -58,7 +58,7 @@ class HomeCategories extends StatelessWidget {
       "imgBottom": -4.0,
       "imgLeft": 8.0,
       "imgPath": "assets/updates/updates.png",
-      "tabName": "Updates",
+      "tabName": "News",
       "imgHeight": 146.0,
       "tabDesc": "View the latest news related to the virus",
       "color": Colors.greenAccent[700],

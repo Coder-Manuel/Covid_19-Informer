@@ -101,20 +101,6 @@ class CreditsScreen extends StatelessWidget {
                       maxFontSize: 25,
                     ),
 
-                    //Version number
-                    AutoSizeText(
-                      "Version 1.0.0",
-                      style: TextStyle(
-                        fontSize: 18,
-                        letterSpacing: 0.5,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff009a88),
-                      ),
-                      maxFontSize: 18,
-                      maxLines: 1,
-                    ),
-
                     SizedBox(height: 10),
 
                     //License Button
@@ -126,12 +112,12 @@ class CreditsScreen extends StatelessWidget {
 
           //Paragraph
           Positioned(
-            top: 375,
+            top: 320,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: const EdgeInsets.all(15),
               child: AutoSizeText(
-                "Covid-19 Informer is an app made with Flutter framework to provide worldwide information related to Covid-19 pandemic. It shows the affected, recovered, deaths, tests and infection probability for each country.",
+                "Covid-19 Informer is an app made to provide worldwide information related to Covid-19 pandemic. It shows the affected, recovered, deaths, tests and infection probability for each country.",
                 style: kStyle.copyWith(
                   fontSize: 16,
                   letterSpacing: 0.4,
@@ -148,69 +134,125 @@ class CreditsScreen extends StatelessWidget {
 
           //Author Credits
           Positioned.fill(
-            bottom: 25,
+            bottom: 50,
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: InkWell(
-                onTap: () async {
-                  const url = 'https://github.com/Coder-Manuel';
-                  if (await canLaunch(url)) {
-                    await launch(
-                      url,
-                      forceSafariVC: false,
-                      forceWebView: false,
-                    );
-                  } else {
-                    throw 'Could not launch $url';
-                  }
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 1.4,
+              child: Container(
+                height: 110,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1.4,
+                  ),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(width: 5),
+                          AutoSizeText(
+                            "Developer: ",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            ),
+                            maxFontSize: 15,
+                            maxLines: 1,
+                          ),
+                          AutoSizeText(
+                            "Coder Manuel",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            ),
+                            maxFontSize: 15,
+                            maxLines: 1,
+                          ),
+                          SizedBox(width: 5),
+                        ],
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  margin: const EdgeInsets.symmetric(horizontal: 15),
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(width: 5),
-                      AutoSizeText(
-                        "Developer: ",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: "Montserrat",
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
-                        ),
-                        maxFontSize: 15,
-                        maxLines: 1,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          InkWell(
+                            onTap: () async {
+                              const url =
+                                  'https://www.instagram.com/coder_manuel';
+                              if (await canLaunch(url)) {
+                                await launch(
+                                  url,
+                                  forceSafariVC: false,
+                                  forceWebView: false,
+                                );
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Image(
+                              height: 55,
+                              width: 55,
+                              // color: Colors.black,
+                              image: AssetImage("assets/instagram.png"),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              const url = 'https://twitter.com/Coder_Manuel';
+                              if (await canLaunch(url)) {
+                                await launch(
+                                  url,
+                                  forceSafariVC: false,
+                                  forceWebView: false,
+                                );
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Image(
+                              height: 55,
+                              width: 55,
+                              color: Colors.blue,
+                              image: AssetImage("assets/twitter.png"),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              const url = 'https://github.com/Coder-Manuel';
+                              if (await canLaunch(url)) {
+                                await launch(
+                                  url,
+                                  forceSafariVC: false,
+                                  forceWebView: false,
+                                );
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Image(
+                              height: 55,
+                              width: 55,
+                              color: Colors.black,
+                              image: AssetImage("assets/github.png"),
+                            ),
+                          ),
+                        ],
                       ),
-                      AutoSizeText(
-                        "Coder Manuel",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: "Montserrat",
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black,
-                        ),
-                        maxFontSize: 15,
-                        maxLines: 1,
-                      ),
-                      SizedBox(width: 5),
-                      Image(
-                        height: 18,
-                        width: 18,
-                        color: Colors.black,
-                        image: AssetImage("assets/github.png"),
-                      ),
-                      SizedBox(width: 5),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
